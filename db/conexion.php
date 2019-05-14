@@ -3,7 +3,7 @@ class database
 {
     public static  function conectar()
     {
-        $db= new mysqli("sql211.epizy.com","epiz_23904845","DjARsvw2h","epiz_23904845_superatedatabase");
+        $db= new mysqli(" remotemysql.com","6NKazsYnfu","uAGJFsP3P7","6NKazsYnfu");
         $r=$db->query("set names 'utf8' ");
         return $db;
     }

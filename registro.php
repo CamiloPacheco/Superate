@@ -21,7 +21,14 @@ if ($r) {
    $_SESSION['email']=$_POST['email'];
    $_SESSION['tipo']=$tipo ;
    $_SESSION['Nombre']=$nombre.' '.$apellido;
-    header("Location:postlogin/inicio.php"); 
+
+   if ($tipo==2) {
+    header("Location:postlogin/inicio.php");
+ 
+     } else {
+       # Aqui va cuando es estudiante.
+       header("Location:postlogin/estudiante.php");
+     }
 } else {
     // header("Location:registro.php?nosepuedo");
 }

@@ -14,7 +14,7 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
     
     session_start();
     $_SESSION['Nombre']=$re['Nombre']." ".$re['Apellido'];
-    if ($re['tipo']>=2) {
+    if ($re['tipo']==2) {
       $_SESSION['id']=$re['id'];
       $_SESSION['email']=$re['Email'];
    $_SESSION['tipo']=$re['tipo'];
@@ -23,6 +23,7 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
 
     } else {
       # Aqui va cuando es estudiante.
+      header("Location:postlogin/estudiante.php");
     }
     
     

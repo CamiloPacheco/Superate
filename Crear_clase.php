@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
@@ -54,6 +53,7 @@
   </form>
 
   <?php
+  echo'hola';
   	if(isset($_POST['btn1']))
   	{
       $conn=mysqli_connect("localhost","root","","superatedatabase");

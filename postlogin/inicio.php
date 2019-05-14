@@ -1,6 +1,7 @@
 <?php 
 require '../db/conexion.php';
 require '../vendor/autoload.php';
+require 'base.php';
 
 $db=database::conectar();
 $categorias=$db->query("select Nombre,id from Categoria")->fetch_all(MYSQLI_ASSOC);
@@ -73,7 +74,7 @@ FB::log($categorias);
                     <li><a href="#installation">Crear curso</a></li>
                     <li><a href="#tmpl-structure">Añadir clase</a></li>
                     <li><a href="#css-structure">Mis curso</a></li>
-                    <li> <a href="cerrarsesion.php">cerrar sesion </a></li>
+                    <li> <a href="cerrarsesion.php">cerrar sesion</a></li>
                      
                 </ul>
             </nav>
@@ -89,22 +90,19 @@ FB::log($categorias);
                         
                         <h2 class="twenty"><?php    echo isset($_SESSION['Nombre'])?$_SESSION['Nombre'] : "no login" ?></h2>
 
-                        <p>Firstly, a huge thanks for purchasing this theme, your support is truly appreciated!</p>
+                        <p>Perfil profesor </p>
 
-                        <p>This document covers the installation and use of this theme and often reveals answers to common problems and issues - read this document thoroughly if you are experiencing any difficulties. If you have any questions that are beyond the scope of this document, feel free to email at <code><a href="mailto:support@pixelcoder.net">support@pixelcoder.net</a></code> Thank you so much!</p>
+                        <p>  Dedicarse a la docencia es una profesión muy vocacional, donde tiene gran peso la motivación por transmitir conocimientos y estar en contacto con estudiantes y profesionales deseosos de seguir aprendidendo y evolucionando.</p>
 		            </div>
 		            
 		            <div class="features">
-		                <h2 class="twenty">Titulos y reconocimientos</h2>
+		                <h2 class="twenty">Aqui prodras</h2>
 		                
 		                <ul>
-		                    <li>Clean &amp; Simple Design</li>
-                            <li>HTML5 &amp; CSS3</li>
-                            <li>Fully Responsive Design</li>
-                            <li>PHP/Ajax Powered Working Contact Form</li>
-                            <li>All files are well commented</li>
-                            <li>Cross Browser Compatible with IE11+, Firefox, Safari, Opera, Chrome</li>
-                            <li>Extensive Documentation</li>
+		                    <li> crear cursos   </li>
+                            <li> Crear clases para tus cursos </li>
+                            <li>Subir video y imagenes para cursos y clases </li>
+                             
 		                </ul>
 		            </div>
 
@@ -326,8 +324,7 @@ FB::log($categorias);
 	 
 		        
 		         
-		    </div>
-		</div>
+		 
 		
 		
 		<!-- Essential JavaScript Libraries

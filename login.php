@@ -1,6 +1,7 @@
 <?php
 require 'db/conexion.php';
 require 'vendor/autoload.php';
+require 'postlogin/base.php';
 
 $db=database::conectar();
 if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
@@ -11,21 +12,23 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
   
     $re=$r->fetch_array(MYSQLI_ASSOC);
     FB::log($re);
-    
+    if (count($re)<1) {
+      echo "<script> window.location='index.php?datosErroneos'; </script>";
+    }else{
     session_start();
     $_SESSION['Nombre']=$re['Nombre']." ".$re['Apellido'];
-    if ($re['tipo']==2) {
+    if ((int)$re['tipo']==2) {
       $_SESSION['id']=$re['id'];
       $_SESSION['email']=$re['Email'];
    $_SESSION['tipo']=$re['tipo'];
     
-      header("Location:postlogin/inicio.php");
+   echo "<script> window.location='postlogin/inicio.php'; </script>";
 
     } else {
       # Aqui va cuando es estudiante.
-      header("Location:postlogin/estudiante.php");
+      echo "<script> window.location='postlogin/estudiante.php'; </script>";
     }
-    
+  }
     
 }
 

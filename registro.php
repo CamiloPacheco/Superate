@@ -1,6 +1,7 @@
 <?php 
 require 'db/conexion.php';
 require 'vendor/autoload.php';
+require 'postlogin/base.php';
 FB::log($_POST);
 if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['email'])&& !empty($_POST['tel']) && !empty($_POST['psw']) && !empty($_POST['tipo'])  )
 {
@@ -23,11 +24,12 @@ if ($r) {
    $_SESSION['Nombre']=$nombre.' '.$apellido;
 
    if ($tipo==2) {
-    header("Location:postlogin/inicio.php");
+  
+    echo "<script> window.location='postlogin/inicio.php'; </script>";
  
      } else {
        # Aqui va cuando es estudiante.
-       header("Location:postlogin/estudiante.php");
+       echo "<script> window.location='postlogin/estudiante.php'; </script>";
      }
 } else {
     // header("Location:registro.php?nosepuedo");

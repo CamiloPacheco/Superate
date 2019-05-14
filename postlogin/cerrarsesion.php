@@ -12,7 +12,7 @@ if (!empty($_SESSION)) {
 	FB::log($_SESSION);
 	
 } 
-header("location:../index.php");
+echo "<script> window.location='../index.php'; </script>";
 
 
 ?>

@@ -1,12 +1,13 @@
 <?php 
 require '../db/conexion.php';
 require '../vendor/autoload.php';
+require 'base.php';
 
 $db=database::conectar();
 $categorias=$db->query("select Nombre,id from Categoria")->fetch_all(MYSQLI_ASSOC);
  
 $cursos=$db->query("SELECT * from curso ")->fetch_all(MYSQLI_ASSOC);
-
+session_start();
 FB::log($categorias);
 
 ?>
@@ -61,7 +62,7 @@ FB::log($categorias);
         <aside class="left-sidebar">
             <div class="logo">
                 <a href="#welcome">
-                    <img src="img/logo.png" alt="">
+                    <img src="img/logo.jpg" alt="">
                 </a>
             </div>
             <nav class="left-nav">
@@ -86,22 +87,17 @@ FB::log($categorias);
                         
                         <h2 class="twenty"><?php    echo isset($_SESSION['Nombre'])?$_SESSION['Nombre'] : "no login" ?></h2>
 
-                        <p>Firstly, a huge thanks for purchasing this theme, your support is truly appreciated!</p>
+                        <p> Tenemos los mejores cursos</p>
 
-                        <p>This document covers the installation and use of this theme and often reveals answers to common problems and issues - read this document thoroughly if you are experiencing any difficulties. If you have any questions that are beyond the scope of this document, feel free to email at <code><a href="mailto:support@pixelcoder.net">support@pixelcoder.net</a></code> Thank you so much!</p>
+                        <p> Estudia lo que quieras y cuando quieras </p>
 		            </div>
 		            
 		            <div class="features">
-		                <h2 class="twenty">Titulos y reconocimientos</h2>
+		                <h2 class="twenty">Aqui podras </h2>
 		                
 		                <ul>
-		                    <li>Clean &amp; Simple Design</li>
-                            <li>HTML5 &amp; CSS3</li>
-                            <li>Fully Responsive Design</li>
-                            <li>PHP/Ajax Powered Working Contact Form</li>
-                            <li>All files are well commented</li>
-                            <li>Cross Browser Compatible with IE11+, Firefox, Safari, Opera, Chrome</li>
-                            <li>Extensive Documentation</li>
+		                    <li>ver cursos </li>
+                             
 		                </ul>
 		            </div>
 
@@ -177,15 +173,7 @@ FB::log($categorias);
     <?php }?>	            
 		        </section>
 
-
-		      
-		        
-		       
-		         
-		    </div>
-		</div>
-		
-		
+ 
 		<!-- Essential JavaScript Libraries
 		==============================================-->
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>

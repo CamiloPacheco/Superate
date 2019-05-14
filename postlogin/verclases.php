@@ -2,6 +2,7 @@
 if ($_GET['id']) {
     require '../db/conexion.php';
 require '../vendor/autoload.php';
+require 'base.php';
 
 $db=database::conectar();
 $video=$db->query("select ruta_video from clases where id=".$_GET['id'])->fetch_assoc();

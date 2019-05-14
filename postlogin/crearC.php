@@ -1,6 +1,7 @@
 <?php 
 require '../db/conexion.php';
 require '../vendor/autoload.php';
+require 'base.php';
 if (isset($_POST['nombreC']) && isset($_POST['desc']) && isset($_POST['tipo'])  && isset($_FILES['file'])  ) {
     FB::log($_POST);
 
@@ -19,10 +20,10 @@ if (isset($_POST['nombreC']) && isset($_POST['desc']) && isset($_POST['tipo'])  
         $db->query("insert into usuarios_cursos values($uid,$id)");
         FB::log($db->error);
          
-        header("Location:inicio.php");
+        echo "<script> window.location='inicio.php'; </script>";
      }else{
        
-        header("Location:inicio.php?formatoIMGnovalido");
+      echo "<script> window.location='estudiante.php?nosepudo'; </script>";
      }
 
 

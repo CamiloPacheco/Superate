@@ -1,7 +1,7 @@
-<?php 
+<?php
 require 'db/conexion.php';
 require 'vendor/autoload.php';
-require 'postlogin/base.php';
+
 FB::log($_POST);
 if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['email'])&& !empty($_POST['tel']) && !empty($_POST['psw']) && !empty($_POST['tipo'])  )
 {
@@ -24,12 +24,12 @@ if ($r) {
    $_SESSION['Nombre']=$nombre.' '.$apellido;
 
    if ($tipo==2) {
-  
-    echo "<script> window.location='postlogin/inicio.php'; </script>";
- 
+
+    echo "<script> window.location='inicio.php'; </script>";
+
      } else {
        # Aqui va cuando es estudiante.
-       echo "<script> window.location='postlogin/estudiante.php'; </script>";
+       echo "<script> window.location='estudiante.php'; </script>";
      }
 } else {
     // header("Location:registro.php?nosepuedo");
@@ -55,12 +55,12 @@ if ($r) {
 <head>
   <meta charset="UTF-8">
   <title>i+d</title>
-  
-  
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style2.css">
 
-  
+
 </head>
 
 <body>
@@ -91,9 +91,9 @@ if ($r) {
         <br>
         <br>
         <label name="mail" for="username">Email </label>
-        <input type="email"  name="email" placeholder="Ingresar Email" required>  
+        <input type="email"  name="email" placeholder="Ingresar Email" required>
         <!-- USERNAME INPUT -->
-        
+
         <!-- PASSWORD INPUT -->
         <label for="password">Contraseña</label>
         <input name="psw"  type="password" placeholder="Ingresar Contraseña" required>
@@ -103,11 +103,11 @@ if ($r) {
 
       </form>
     </div>
-    
+
   </body>
 </html>
-  
-  
+
+
 
 </body>
 

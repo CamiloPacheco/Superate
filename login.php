@@ -1,7 +1,7 @@
 <?php
 require 'db/conexion.php';
 require 'vendor/autoload.php';
-require 'postlogin/base.php';
+
 
 $db=database::conectar();
 if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
@@ -9,7 +9,7 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
     $p=mysqli_real_escape_string($db,$_POST['psw']);
     $pswd=$p;
     $r=$db->query("select* from usuarios where Email='$email' and Psw='$pswd' ");
-  
+
     $re=$r->fetch_array(MYSQLI_ASSOC);
     FB::log($re);
     if (count($re)<1) {
@@ -21,15 +21,15 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
       $_SESSION['id']=$re['id'];
       $_SESSION['email']=$re['Email'];
    $_SESSION['tipo']=$re['tipo'];
-    
-   echo "<script> window.location='postlogin/inicio.php'; </script>";
+
+   echo "<script> window.location='inicio.php'; </script>";
 
     } else {
       # Aqui va cuando es estudiante.
-      echo "<script> window.location='postlogin/estudiante.php'; </script>";
+      echo "<script> window.location='estudiante.php'; </script>";
     }
   }
-    
+
 }
 
 
@@ -39,10 +39,10 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
 
 <head>
   <meta charset="UTF-8">
-  <title>i+d</title>  
+  <title>i+d</title>
       <link rel="stylesheet" href="css/style.css">
 
-  
+
 </head>
 
 <body>
@@ -80,17 +80,17 @@ if (!empty($_POST['email']) && !empty( $_POST['psw'])) {
         <br>
         <a href="#">Haz olvidado la contraseña?</a><br>
         <a href="registro.php">No tienes cuenta?</a>
-       
-      
-    
-        
+
+
+
+
       </form>
     </div>
-    
+
   </body>
 </html>
-  
-  
+
+
 
 </body>
 

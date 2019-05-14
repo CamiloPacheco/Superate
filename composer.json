@@ -1,0 +1,6 @@
+{
+    "require": {
+        "firephp/firephp-core": "^0.4.0",
+        "masterexploder/phpthumb": "^2.1"
+    }
+}
